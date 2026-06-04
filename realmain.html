@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=connected-swamp-5">
-    <script src="script.js?v=connected-swamp-5" defer></script>
+    <link rel="stylesheet" href="styles.css?v=connected-swamp-6">
+    <script src="script.js?v=connected-swamp-6" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,9 +27,9 @@
             </button>
 
             <ul class="nav-list" id="primaryNav">
+                <li><a class="nav-link" href="#map">Map</a></li>
                 <li><a class="nav-link" href="#profile">Profile</a></li>
                 <li><a class="nav-link" href="#research">Research</a></li>
-                <li><a class="nav-link" href="#map">Map</a></li>
                 <li><a class="nav-link" href="#projects">Projects</a></li>
                 <li><a class="nav-link" href="#trail">Trail</a></li>
                 <li><a class="nav-link" href="#inventory">Inventory</a></li>
@@ -39,6 +39,57 @@
     </header>
 
     <main id="main">
+        <section class="location-band location-band--map map-first" id="map" aria-labelledby="map-title">
+            <div class="location-scene" aria-hidden="true"></div>
+            <div class="page-wrap">
+                <div class="section-header">
+                    <p class="section-kicker">Survey Board / Swamp Map</p>
+                    <h2 class="section-heading" id="map-title">A connected route through the portfolio.</h2>
+                    <p class="section-lede">Each stop on the map corresponds to a section of the site, turning the portfolio into one continuous research trail.</p>
+                </div>
+
+                <nav class="swamp-map pixel-panel" aria-label="Portfolio section map">
+                    <img class="swamp-map__image pixel-raster" src="assets/backgrounds/generated-swamp-site-map.webp" alt="Pixel-art swamp map connecting portfolio landmarks.">
+                    <a class="map-location map-location--home" href="#home" data-target="home">
+                        <span class="map-location__index">00</span>
+                        <strong>Swamp Entrance</strong>
+                        <span>Welcome</span>
+                    </a>
+                    <a class="map-location map-location--profile" href="#profile" data-target="profile">
+                        <span class="map-location__index">01</span>
+                        <strong>Base Camp</strong>
+                        <span>Profile</span>
+                    </a>
+                    <a class="map-location map-location--research" href="#research" data-target="research">
+                        <span class="map-location__index">02</span>
+                        <strong>Analysis Dock</strong>
+                        <span>Featured Research</span>
+                    </a>
+                    <a class="map-location map-location--projects" href="#projects" data-target="projects">
+                        <span class="map-location__index">03</span>
+                        <strong>Workshop Outpost</strong>
+                        <span>Projects</span>
+                    </a>
+                    <a class="map-location map-location--trail" href="#trail" data-target="trail">
+                        <span class="map-location__index">04</span>
+                        <strong>Lantern Route</strong>
+                        <span>Experience</span>
+                    </a>
+                    <a class="map-location map-location--inventory" href="#inventory" data-target="inventory">
+                        <span class="map-location__index">05</span>
+                        <strong>Supply Depot</strong>
+                        <span>Skills</span>
+                    </a>
+                    <a class="map-location map-location--contact" href="#contact" data-target="contact">
+                        <span class="map-location__index">06</span>
+                        <strong>Final Checkpoint</strong>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="scene-divider" aria-hidden="true"></div>
+        </section>
+
         <section class="hero-section location-band location-band--hero" id="home" aria-labelledby="hero-title">
             <div class="fireflies" aria-hidden="true">
                 <span></span><span></span><span></span><span></span><span></span>
@@ -159,57 +210,6 @@
             <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="location-band location-band--map" id="map" aria-labelledby="map-title">
-            <div class="location-scene" aria-hidden="true"></div>
-            <div class="page-wrap">
-                <div class="section-header">
-                    <p class="section-kicker">Survey Board / Swamp Map</p>
-                    <h2 class="section-heading" id="map-title">A connected route through the portfolio.</h2>
-                    <p class="section-lede">Each stop on the map corresponds to a section below, so the site reads like one continuous research trail instead of unrelated panels.</p>
-                </div>
-
-                <nav class="swamp-map pixel-panel" aria-label="Portfolio section map">
-                    <div class="map-water" aria-hidden="true"></div>
-                    <a class="map-location map-location--home" href="#home" data-target="home">
-                        <span class="map-location__index">00</span>
-                        <strong>Swamp Entrance</strong>
-                        <span>Welcome</span>
-                    </a>
-                    <a class="map-location map-location--profile" href="#profile" data-target="profile">
-                        <span class="map-location__index">01</span>
-                        <strong>Base Camp</strong>
-                        <span>Profile</span>
-                    </a>
-                    <a class="map-location map-location--research" href="#research" data-target="research">
-                        <span class="map-location__index">02</span>
-                        <strong>Analysis Dock</strong>
-                        <span>Featured Research</span>
-                    </a>
-                    <a class="map-location map-location--projects" href="#projects" data-target="projects">
-                        <span class="map-location__index">03</span>
-                        <strong>Workshop Outpost</strong>
-                        <span>Projects</span>
-                    </a>
-                    <a class="map-location map-location--trail" href="#trail" data-target="trail">
-                        <span class="map-location__index">04</span>
-                        <strong>Lantern Route</strong>
-                        <span>Experience</span>
-                    </a>
-                    <a class="map-location map-location--inventory" href="#inventory" data-target="inventory">
-                        <span class="map-location__index">05</span>
-                        <strong>Supply Depot</strong>
-                        <span>Skills</span>
-                    </a>
-                    <a class="map-location map-location--contact" href="#contact" data-target="contact">
-                        <span class="map-location__index">06</span>
-                        <strong>Final Checkpoint</strong>
-                        <span>Contact</span>
-                    </a>
-                </nav>
-            </div>
-            <div class="scene-divider" aria-hidden="true"></div>
-        </section>
-
         <section class="location-band location-band--projects" id="projects" aria-labelledby="projects-title">
             <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap">
@@ -305,7 +305,7 @@
                     </article>
 
                     <article class="quest-card">
-                        <img class="project-thumb pixel-raster" src="assets/ui/project-community-compass.svg" alt="Community resource map with route markers and a compass terminal.">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-community-compass.webp" alt="Swamp command table with a community resource map and route pins.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Prototype</span>
@@ -323,7 +323,7 @@
                     </article>
 
                     <article class="quest-card">
-                        <img class="project-thumb pixel-raster" src="assets/ui/project-discord-bot.svg" alt="Bot command terminal with chat bubbles and automation panels.">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-discord-bot.webp" alt="Automation terminal with chat panels and bot status modules.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Prototype</span>
@@ -354,23 +354,27 @@
 
                 <ol class="timeline" aria-label="Experience milestones">
                     <li class="timeline-node">
-                        <span class="node-marker" aria-hidden="true">01</span>
+                        <img class="timeline-art pixel-raster" src="assets/ui/experience-ai-research.webp" alt="Research desk with heatmap monitors and evaluation charts.">
+                        <span class="timeline-step">01 / Analysis Dock</span>
                         <h3>AI Research Assistant</h3>
                         <p>Experimental design, ML debugging, attribution-map datasets, model evaluation, and research iteration.</p>
                     </li>
                     <li class="timeline-node">
-                        <span class="node-marker" aria-hidden="true">02</span>
-                        <h3>UF Computer Science</h3>
-                        <p>Software development foundations across Python, JavaScript, HTML/CSS, C++, and project-based problem solving.</p>
+                        <img class="timeline-art pixel-raster" src="assets/ui/experience-peer-mentor.webp" alt="Mentoring table with coding notebook, route cards, and guidance markers.">
+                        <span class="timeline-step">02 / Study Outpost</span>
+                        <h3>Peer Mentor</h3>
+                        <p>Supported peers through coursework, technical problem solving, and project-oriented study habits.</p>
                     </li>
                     <li class="timeline-node">
-                        <span class="node-marker" aria-hidden="true">03</span>
-                        <h3>Research pipeline iteration</h3>
-                        <p>Building repeatable evaluation paths for attribution maps, binary classification, and metric-driven comparison.</p>
+                        <img class="timeline-art pixel-raster" src="assets/ui/experience-math-tutor.webp" alt="Tutoring desk with notebook, graph board, calculator, and study cards.">
+                        <span class="timeline-step">03 / Problem Station</span>
+                        <h3>Math Tutor</h3>
+                        <p>Helped students work through math concepts with structured practice, explanation, and feedback.</p>
                     </li>
                     <li class="timeline-node">
-                        <span class="node-marker" aria-hidden="true">04</span>
-                        <h3>Selected software projects</h3>
+                        <img class="timeline-art pixel-raster" src="assets/ui/experience-software-projects.webp" alt="Swamp workshop bench with laptop, project panels, and build tools.">
+                        <span class="timeline-step">04 / Workshop Dock</span>
+                        <h3>Selected Software Projects</h3>
                         <p>Practical tools, game systems, learning concepts, and automation projects built around clear workflows.</p>
                     </li>
                 </ol>
