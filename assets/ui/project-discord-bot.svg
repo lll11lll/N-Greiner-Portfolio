@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" role="img" aria-labelledby="title desc">
+  <title id="title">Discord Bot project thumbnail</title>
+  <desc id="desc">Pixel-art bot command terminal with chat bubbles and automation panels.</desc>
+  <rect width="420" height="360" fill="#07110d"/>
+  <rect x="18" y="18" width="384" height="324" fill="#102017" stroke="#668045" stroke-width="8"/>
+  <rect x="34" y="34" width="352" height="292" fill="#0b1625" stroke="#203b28" stroke-width="5"/>
+  <rect x="58" y="58" width="202" height="198" fill="#111f36" stroke="#4169d8" stroke-width="5"/>
+  <rect x="78" y="78" width="96" height="28" fill="#172c20" stroke="#668045" stroke-width="4"/>
+  <rect x="78" y="124" width="148" height="28" fill="#172c20" stroke="#668045" stroke-width="4"/>
+  <rect x="78" y="170" width="118" height="28" fill="#172c20" stroke="#668045" stroke-width="4"/>
+  <rect x="96" y="88" width="58" height="8" fill="#b0c4a2"/>
+  <rect x="96" y="134" width="96" height="8" fill="#efbf4f"/>
+  <rect x="96" y="180" width="76" height="8" fill="#fa4616"/>
+  <rect x="286" y="68" width="70" height="70" fill="#172c20" stroke="#668045" stroke-width="5"/>
+  <rect x="304" y="86" width="34" height="24" fill="#4169d8"/>
+  <rect x="300" y="116" width="42" height="8" fill="#efbf4f"/>
+  <rect x="292" y="160" width="58" height="58" fill="#07110d" stroke="#668045" stroke-width="5"/>
+  <rect x="306" y="174" width="10" height="10" fill="#f2f6df"/>
+  <rect x="326" y="174" width="10" height="10" fill="#f2f6df"/>
+  <rect x="306" y="198" width="30" height="8" fill="#fa4616"/>
+  <path d="M254 112h32M254 188h38M260 220h28" stroke="#efbf4f" stroke-width="8" stroke-linecap="square"/>
+  <rect x="58" y="278" width="298" height="38" fill="#172c20" stroke="#668045" stroke-width="4"/>
+  <rect x="76" y="290" width="18" height="10" fill="#fa4616"/>
+  <rect x="108" y="290" width="56" height="10" fill="#4169d8"/>
+  <rect x="180" y="290" width="82" height="10" fill="#b0c4a2"/>
+  <rect x="278" y="290" width="40" height="10" fill="#efbf4f"/>
+  <rect x="30" y="30" width="20" height="20" fill="#203b28"/>
+  <rect x="370" y="30" width="20" height="20" fill="#203b28"/>
+  <rect x="30" y="310" width="20" height="20" fill="#203b28"/>
+  <rect x="370" y="310" width="20" height="20" fill="#203b28"/>
+</svg>

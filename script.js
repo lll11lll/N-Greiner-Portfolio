@@ -3,9 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.querySelector(".nav-toggle");
     const navList = document.querySelector("#primaryNav");
     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-    const sections = navLinks
+    const mapLinks = Array.from(document.querySelectorAll(".map-location"));
+    const sectionLinks = [...navLinks, ...mapLinks];
+    const sections = Array.from(new Set(sectionLinks
         .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
+        .filter(Boolean)));
+
+    const closeMenu = () => {
+        if (!navToggle || !navList) return;
+        navList.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+    };
 
     if (navToggle && navList) {
         navToggle.addEventListener("click", () => {
@@ -14,10 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         navLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                navList.classList.remove("is-open");
-                navToggle.setAttribute("aria-expanded", "false");
-            });
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
         });
     }
 
@@ -29,13 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
     markScrolled();
     window.addEventListener("scroll", markScrolled, { passive: true });
 
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", (event) => {
-            const target = document.querySelector(anchor.getAttribute("href"));
+            const hash = anchor.getAttribute("href");
+            const target = document.querySelector(hash);
             if (!target) return;
             event.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-            history.replaceState(null, "", anchor.getAttribute("href"));
+            closeMenu();
+
+            const headerOffset = header ? header.getBoundingClientRect().height : 0;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
+
+            window.scrollTo({
+                top: Math.max(targetTop, 0),
+                behavior: prefersReducedMotion ? "auto" : "smooth"
+            });
+
+            history.replaceState(null, "", hash);
+            target.setAttribute("tabindex", "-1");
+            window.setTimeout(() => target.removeAttribute("tabindex"), 1200);
         });
     });
 
@@ -44,7 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
                 const activeId = `#${entry.target.id}`;
+
                 navLinks.forEach((link) => {
+                    link.classList.toggle("is-active", link.getAttribute("href") === activeId);
+                });
+
+                mapLinks.forEach((link) => {
                     link.classList.toggle("is-active", link.getAttribute("href") === activeId);
                 });
             });
@@ -56,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach((section) => observer.observe(section));
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const dashboard = document.querySelector(".swamp-dashboard");
 
     if (!prefersReducedMotion && dashboard) {

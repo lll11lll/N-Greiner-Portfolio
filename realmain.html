@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nicholas Greiner portfolio: AI research, software projects, animal science, and practical systems.">
+    <meta name="description" content="Nicholas Greiner portfolio: AI/ML research, software projects, experiment design, and practical technical systems.">
     <title>Nicholas Greiner | AI Research and Software Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=gator-swamp-quest-2">
-    <script src="script.js?v=gator-swamp-quest-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=connected-swamp-4">
+    <script src="script.js?v=connected-swamp-4" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -29,6 +29,7 @@
             <ul class="nav-list" id="primaryNav">
                 <li><a class="nav-link" href="#profile">Profile</a></li>
                 <li><a class="nav-link" href="#research">Research</a></li>
+                <li><a class="nav-link" href="#map">Map</a></li>
                 <li><a class="nav-link" href="#projects">Projects</a></li>
                 <li><a class="nav-link" href="#trail">Trail</a></li>
                 <li><a class="nav-link" href="#inventory">Inventory</a></li>
@@ -38,7 +39,7 @@
     </header>
 
     <main id="main">
-        <section class="hero-section section-band" id="home" aria-labelledby="hero-title">
+        <section class="hero-section location-band location-band--hero" id="home" aria-labelledby="hero-title">
             <div class="fireflies" aria-hidden="true">
                 <span></span><span></span><span></span><span></span><span></span>
             </div>
@@ -47,8 +48,8 @@
                 <div class="pixel-panel hero-panel">
                     <p class="terminal-label">SWAMP LAB / ACTIVE QUEST</p>
                     <h1 id="hero-title">Nicholas Greiner</h1>
-                    <p class="hero-line">Building AI and software systems through research, experimentation, and real-world domain experience.</p>
-                    <p class="hero-copy">UF student working across AI, software development, animal science, and veterinary experience.</p>
+                    <p class="hero-line">Building AI and software systems through research, experimentation, and real-world technical problem solving.</p>
+                    <p class="hero-copy">UF student focused on computer science, AI/ML research, software engineering, and practical research systems.</p>
 
                     <div class="hero-actions" aria-label="Primary actions">
                         <a class="pixel-button" href="#projects">View Projects</a>
@@ -58,13 +59,8 @@
                 </div>
 
                 <div class="swamp-dashboard" aria-label="Portfolio status panel">
-                    <div class="swamp-scene" aria-hidden="true">
-                        <img class="hero-scene-art pixel-raster" src="assets/backgrounds/generated-hero-swamp.webp" alt="">
-                        <img class="pixel-gator pixel-raster" src="assets/sprites/generated-gator-mascot.webp" alt="">
-                        <div class="lily lily-a"></div>
-                        <div class="lily lily-b"></div>
-                        <div class="cattail cattail-a"></div>
-                        <div class="cattail cattail-b"></div>
+                    <div class="hero-scene-card">
+                        <img class="hero-scene-art pixel-raster" src="assets/backgrounds/generated-hero-outpost.webp" alt="" aria-hidden="true">
                     </div>
                     <div class="pixel-panel status-panel">
                         <p class="terminal-label">CURRENT FOCUS</p>
@@ -79,17 +75,18 @@
             </div>
         </section>
 
-        <section class="section-band profile-band" id="profile" aria-labelledby="profile-title">
+        <section class="location-band location-band--profile" id="profile" aria-labelledby="profile-title">
+            <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap two-column">
                 <div>
-                    <p class="section-kicker">Character Profile</p>
-                    <h2 class="section-heading" id="profile-title">AI, software, animal science, and research workflows.</h2>
-                    <p class="section-lede">I am a UF student working at the intersection of AI, software development, animal science, and veterinary experience.</p>
-                    <p>I build software and ML systems informed by real research workflows and hands-on domain experience. My current work centers on attribution maps for out-of-distribution detection, where the useful questions are experimental as much as technical: what data should be compared, what signals are reliable, and how should model behavior be evaluated?</p>
+                    <p class="section-kicker">Base Camp / Character Profile</p>
+                    <h2 class="section-heading" id="profile-title">CS, AI research, software systems, and experiment-driven work.</h2>
+                    <p class="section-lede">I am a UF student working across computer science, AI/ML research, software development, and practical technical problem solving.</p>
+                    <p>I build software and ML systems informed by real research workflows. My current work centers on attribution maps for out-of-distribution detection, where the useful questions are experimental as much as technical: what data should be compared, what signals are reliable, and how should model behavior be evaluated?</p>
                 </div>
 
                 <aside class="pixel-card profile-card" aria-label="Profile stats">
-                    <img class="profile-portrait pixel-raster" src="assets/sprites/generated-profile-gator.webp" alt="Original pixel-art gator researcher avatar used as a character profile motif.">
+                    <img class="profile-portrait pixel-raster" src="assets/backgrounds/generated-profile-base-camp.webp" alt="Pixel-art base camp desk with a lantern and research notebook.">
                     <div class="profile-row">
                         <span>Role</span>
                         <strong>UF student</strong>
@@ -99,8 +96,8 @@
                         <strong>AI research + software systems</strong>
                     </div>
                     <div class="profile-row">
-                        <span>Domain</span>
-                        <strong>Animal science and veterinary experience</strong>
+                        <span>Technical domain</span>
+                        <strong>Computer science and model evaluation</strong>
                     </div>
                     <div class="profile-row">
                         <span>Current quest</span>
@@ -108,18 +105,20 @@
                     </div>
                 </aside>
             </div>
+            <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="section-band research-band" id="research" aria-labelledby="research-title">
+        <section class="location-band location-band--research" id="research" aria-labelledby="research-title">
+            <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap">
                 <div class="section-header">
-                    <p class="section-kicker">Featured Research</p>
+                    <p class="section-kicker">Analysis Dock / Featured Research</p>
                     <h2 class="section-heading" id="research-title">Attribution Maps for OOD Detection</h2>
                 </div>
 
                 <div class="research-layout">
                     <article class="pixel-panel research-panel">
-                        <img class="research-thumb pixel-raster" src="assets/ui/generated-research-thumbnail.webp" alt="Pixel-art diagram showing an image input, attribution heatmap, and binary evaluation panel.">
+                        <img class="research-thumb pixel-raster" src="assets/ui/generated-research-thumbnail.webp" alt="Attribution-map workflow diagram with image inputs, heatmap output, and evaluation panel.">
                         <p class="terminal-label">RESEARCH QUESTION</p>
                         <p class="research-statement">Researching whether neural network attribution maps can help distinguish in-distribution images from out-of-distribution samples using ResNet models, Integrated Gradients, and binary evaluation pipelines.</p>
                         <div class="research-steps" aria-label="Research workflow">
@@ -131,7 +130,7 @@
                             <div>
                                 <span>2</span>
                                 <strong>Build binary datasets</strong>
-                                <p>Compare ID and OOD attribution-map samples, including bird ID versus vehicle OOD experiments.</p>
+                                <p>Compare ID and OOD attribution-map samples through repeatable binary classification experiments.</p>
                             </div>
                             <div>
                                 <span>3</span>
@@ -157,18 +156,67 @@
                     </aside>
                 </div>
             </div>
+            <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="section-band projects-band" id="projects" aria-labelledby="projects-title">
+        <section class="location-band location-band--map" id="map" aria-labelledby="map-title">
+            <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap">
                 <div class="section-header">
-                    <p class="section-kicker">Projects / Quest Log</p>
+                    <p class="section-kicker">Survey Board / Swamp Map</p>
+                    <h2 class="section-heading" id="map-title">A connected route through the portfolio.</h2>
+                    <p class="section-lede">Each stop on the map corresponds to a section below, so the site reads like one continuous research trail instead of unrelated panels.</p>
+                </div>
+
+                <nav class="swamp-map pixel-panel" aria-label="Portfolio section map">
+                    <div class="map-water" aria-hidden="true"></div>
+                    <a class="map-location map-location--profile" href="#profile" data-target="profile">
+                        <span class="map-location__index">01</span>
+                        <strong>Base Camp</strong>
+                        <span>Profile</span>
+                    </a>
+                    <a class="map-location map-location--research" href="#research" data-target="research">
+                        <span class="map-location__index">02</span>
+                        <strong>Analysis Dock</strong>
+                        <span>Featured Research</span>
+                    </a>
+                    <a class="map-location map-location--projects" href="#projects" data-target="projects">
+                        <span class="map-location__index">03</span>
+                        <strong>Workshop Outpost</strong>
+                        <span>Projects</span>
+                    </a>
+                    <a class="map-location map-location--trail" href="#trail" data-target="trail">
+                        <span class="map-location__index">04</span>
+                        <strong>Lantern Route</strong>
+                        <span>Experience</span>
+                    </a>
+                    <a class="map-location map-location--inventory" href="#inventory" data-target="inventory">
+                        <span class="map-location__index">05</span>
+                        <strong>Supply Depot</strong>
+                        <span>Skills</span>
+                    </a>
+                    <a class="map-location map-location--contact" href="#contact" data-target="contact">
+                        <span class="map-location__index">06</span>
+                        <strong>Final Checkpoint</strong>
+                        <span>Contact</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="scene-divider" aria-hidden="true"></div>
+        </section>
+
+        <section class="location-band location-band--projects" id="projects" aria-labelledby="projects-title">
+            <div class="location-scene" aria-hidden="true"></div>
+            <div class="page-wrap">
+                <div class="section-header">
+                    <p class="section-kicker">Workshop Outpost / Quest Log</p>
                     <h2 class="section-heading" id="projects-title">Current research and software systems first.</h2>
                     <p class="section-lede">Each project is framed by purpose, tools, status, and link availability. Unknown links are marked as TODO instead of guessed.</p>
                 </div>
 
                 <div class="quest-grid">
                     <article class="quest-card quest-card--featured">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-ood-attribution.webp" alt="Attribution heatmap pipeline shown on a research monitor.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/research.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Research</span>
@@ -180,6 +228,7 @@
                     </article>
 
                     <article class="quest-card quest-card--featured">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-gator-gabber-terminal.webp" alt="Language conversation terminal with speech bubbles and microphone controls.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Prototype</span>
@@ -191,6 +240,7 @@
                     </article>
 
                     <article class="quest-card quest-card--featured">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-pvz-rl-console.webp" alt="AI strategy console with a tactical grid and game-state panels.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/research.svg" alt="" aria-hidden="true">
                             <span class="quest-status">In Progress</span>
@@ -202,6 +252,7 @@
                     </article>
 
                     <article class="quest-card">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-prosol-puzzle-board.webp" alt="Logic puzzle board with challenge tiles and a terminal panel.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Prototype</span>
@@ -213,6 +264,7 @@
                     </article>
 
                     <article class="quest-card">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-tip-tracker-terminal.webp" alt="Delivery earnings dashboard with receipt, route, and coin indicators.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Completed</span>
@@ -224,6 +276,7 @@
                     </article>
 
                     <article class="quest-card">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-ocean-odyssey.webp" alt="Ocean interface with a small boat, wave monitor, and navigation display.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Completed</span>
@@ -235,6 +288,7 @@
                     </article>
 
                     <article class="quest-card">
+                        <img class="project-thumb pixel-raster" src="assets/ui/project-etch-sketch-panel.webp" alt="Retro drawing panel with knobs and a grid sketch.">
                         <div class="quest-card__top">
                             <img class="pixel-icon" src="assets/icons/code.svg" alt="" aria-hidden="true">
                             <span class="quest-status">Completed</span>
@@ -246,12 +300,14 @@
                     </article>
                 </div>
             </div>
+            <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="section-band trail-band" id="trail" aria-labelledby="trail-title">
+        <section class="location-band location-band--trail" id="trail" aria-labelledby="trail-title">
+            <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap">
                 <div class="section-header">
-                    <p class="section-kicker">Experience / Swamp Trail</p>
+                    <p class="section-kicker">Lantern Route / Experience</p>
                     <h2 class="section-heading" id="trail-title">The path behind the current work.</h2>
                 </div>
 
@@ -268,56 +324,63 @@
                     </li>
                     <li class="timeline-node">
                         <span class="node-marker" aria-hidden="true">03</span>
-                        <h3>Animal care and veterinary experience</h3>
-                        <p>Real-world domain context that sharpens how technical systems should support people, workflows, and animals.</p>
+                        <h3>Research pipeline iteration</h3>
+                        <p>Building repeatable evaluation paths for attribution maps, binary classification, and metric-driven comparison.</p>
                     </li>
                     <li class="timeline-node">
                         <span class="node-marker" aria-hidden="true">04</span>
                         <h3>Selected software projects</h3>
-                        <p>Practical tools, game systems, learning concepts, and automation projects built from hands-on needs.</p>
+                        <p>Practical tools, game systems, learning concepts, and automation projects built around clear workflows.</p>
                     </li>
                 </ol>
             </div>
+            <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="section-band inventory-band" id="inventory" aria-labelledby="inventory-title">
+        <section class="location-band location-band--inventory" id="inventory" aria-labelledby="inventory-title">
+            <div class="location-scene" aria-hidden="true"></div>
             <div class="page-wrap">
                 <div class="section-header">
-                    <p class="section-kicker">Skills / Inventory</p>
+                    <p class="section-kicker">Supply Depot / Skills Inventory</p>
                     <h2 class="section-heading" id="inventory-title">Tools grouped by how they are used.</h2>
                 </div>
 
                 <div class="inventory-grid">
                     <article class="skill-item">
+                        <img class="skill-icon pixel-icon" src="assets/icons/skill-machine-learning.svg" alt="" aria-hidden="true">
                         <h3>Machine Learning</h3>
                         <p>PyTorch, ResNet, Integrated Gradients, Captum, model evaluation, classification, OOD detection.</p>
                     </article>
                     <article class="skill-item">
+                        <img class="skill-icon pixel-icon" src="assets/icons/skill-programming.svg" alt="" aria-hidden="true">
                         <h3>Programming</h3>
                         <p>Python, JavaScript, HTML/CSS, C++, static web apps, UI behavior, small automation systems.</p>
                     </article>
                     <article class="skill-item">
+                        <img class="skill-icon pixel-icon" src="assets/icons/skill-data-tools.svg" alt="" aria-hidden="true">
                         <h3>Data / Tools</h3>
                         <p>pandas, NumPy, matplotlib, Excel automation, OpenPyXL, Git, GitHub, structured debugging.</p>
                     </article>
                     <article class="skill-item">
+                        <img class="skill-icon pixel-icon" src="assets/icons/skill-research.svg" alt="" aria-hidden="true">
                         <h3>Research</h3>
                         <p>Experiment design, ablation thinking, metric analysis, literature review, pipeline iteration.</p>
                     </article>
                 </div>
             </div>
+            <div class="scene-divider" aria-hidden="true"></div>
         </section>
 
-        <section class="section-band contact-band" id="contact" aria-labelledby="contact-title">
+        <section class="location-band location-band--contact" id="contact" aria-labelledby="contact-title">
             <div class="page-wrap contact-layout">
                 <div>
-                    <p class="section-kicker">Contact / Final Checkpoint</p>
+                    <p class="section-kicker">Final Checkpoint / Contact</p>
                     <h2 class="section-heading" id="contact-title">Open to research collaboration and practical software work.</h2>
                     <p class="section-lede">For now, contact and project links are intentionally marked TODO until the exact public URLs are confirmed.</p>
                 </div>
 
                 <address class="pixel-panel contact-panel">
-                    <img class="contact-art pixel-raster" src="assets/backgrounds/generated-contact-checkpoint.webp" alt="Pixel-art swamp checkpoint scene with dock, lantern, and research outpost atmosphere.">
+                    <img class="contact-art pixel-raster" src="assets/backgrounds/generated-contact-checkpoint.webp" alt="Swamp checkpoint dock with lantern and research outpost.">
                     <ul class="contact-list">
                         <li>
                             <img class="pixel-icon" src="assets/icons/mail.svg" alt="" aria-hidden="true">

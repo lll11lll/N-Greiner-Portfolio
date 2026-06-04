@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Research inventory icon</title>
+  <path fill="#07110d" d="M8 8h48v48H8z"/>
+  <path fill="#172c20" d="M12 12h40v40H12z"/>
+  <path fill="#0d4450" d="M20 18h24v16H20z"/>
+  <path fill="#fa4616" d="M24 22h4v4h-4zm6 2h4v4h-4zm6-2h4v8h-4z"/>
+  <path fill="#efbf4f" d="M23 38h18v4H23zm8-4h4v8h-4zm8 8h8v4h-8z"/>
+  <path fill="#f2f6df" d="M18 44h12v4H18z"/>
+  <path fill="#668045" d="M8 8h48v4H8zm0 44h48v4H8zM8 8h4v48H8zm44 0h4v48h-4z"/>
+</svg>

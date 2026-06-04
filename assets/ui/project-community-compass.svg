@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" role="img" aria-labelledby="title desc">
+  <title id="title">Community Compass project thumbnail</title>
+  <desc id="desc">Pixel-art community resource map with route markers and a compass terminal.</desc>
+  <rect width="420" height="360" fill="#07110d"/>
+  <rect x="18" y="18" width="384" height="324" fill="#102017" stroke="#668045" stroke-width="8"/>
+  <rect x="34" y="34" width="352" height="292" fill="#0d2730" stroke="#203b28" stroke-width="5"/>
+  <rect x="54" y="54" width="210" height="190" fill="#112f22" stroke="#668045" stroke-width="4"/>
+  <path d="M72 196h48v-34h44v-44h52V84h28" fill="none" stroke="#efbf4f" stroke-width="10" stroke-linecap="square"/>
+  <path d="M94 78h42v34H94zM174 154h44v38h-44zM226 70h42v42h-42z" fill="#172c20" stroke="#4169d8" stroke-width="5"/>
+  <rect x="102" y="86" width="26" height="18" fill="#fa4616"/>
+  <rect x="184" y="164" width="24" height="18" fill="#efbf4f"/>
+  <rect x="236" y="80" width="22" height="22" fill="#b0c4a2"/>
+  <rect x="286" y="58" width="74" height="74" fill="#172c20" stroke="#668045" stroke-width="5"/>
+  <path d="M323 70l12 37-12 13-13-13z" fill="#efbf4f"/>
+  <path d="M323 70v50M300 96h46" stroke="#f2f6df" stroke-width="4"/>
+  <rect x="286" y="152" width="74" height="94" fill="#07110d" stroke="#668045" stroke-width="5"/>
+  <rect x="300" y="168" width="46" height="8" fill="#4169d8"/>
+  <rect x="300" y="188" width="34" height="8" fill="#b0c4a2"/>
+  <rect x="300" y="208" width="42" height="8" fill="#fa4616"/>
+  <rect x="54" y="266" width="306" height="40" fill="#172c20" stroke="#668045" stroke-width="4"/>
+  <rect x="72" y="278" width="36" height="12" fill="#efbf4f"/>
+  <rect x="124" y="278" width="70" height="12" fill="#4169d8"/>
+  <rect x="210" y="278" width="92" height="12" fill="#b0c4a2"/>
+  <rect x="30" y="30" width="20" height="20" fill="#203b28"/>
+  <rect x="370" y="30" width="20" height="20" fill="#203b28"/>
+  <rect x="30" y="310" width="20" height="20" fill="#203b28"/>
+  <rect x="370" y="310" width="20" height="20" fill="#203b28"/>
+</svg>
