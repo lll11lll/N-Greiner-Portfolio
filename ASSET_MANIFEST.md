@@ -20,6 +20,8 @@ This project uses a hybrid asset strategy: sourced CC0 support art for subtle en
 | Delivery tip tracker project thumbnail | Generated | Cropped from an original seven-project thumbnail sheet generated for this project with OpenAI image generation. | N/A | `assets/ui/project-tip-tracker-terminal.webp` |
 | Ocean Odyssey project thumbnail | Generated | Cropped from an original seven-project thumbnail sheet generated for this project with OpenAI image generation. | N/A | `assets/ui/project-ocean-odyssey.webp` |
 | Etch-A-Sketch project thumbnail | Generated | Cropped from an original seven-project thumbnail sheet generated for this project with OpenAI image generation. | N/A | `assets/ui/project-etch-sketch-panel.webp` |
+| Community Compass project thumbnail | Created | Original hand-authored SVG pixel-art thumbnail created in this repo as editable placeholder project art. | N/A | `assets/ui/project-community-compass.svg` |
+| Discord Bot project thumbnail | Created | Original hand-authored SVG pixel-art thumbnail created in this repo as editable placeholder project art. | N/A | `assets/ui/project-discord-bot.svg` |
 | Machine Learning skill icon | Created | Original hand-authored SVG icon created in this repo. | N/A | `assets/icons/skill-machine-learning.svg` |
 | Programming skill icon | Created | Original hand-authored SVG icon created in this repo. | N/A | `assets/icons/skill-programming.svg` |
 | Data / Tools skill icon | Created | Original hand-authored SVG icon created in this repo. | N/A | `assets/icons/skill-data-tools.svg` |
