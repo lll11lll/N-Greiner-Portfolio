@@ -23,6 +23,13 @@
     --body-font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --wrap: min(1180px, calc(100% - 40px));
     --header-height: 82px;
+    --divider-waterline: url("assets/backgrounds/generated-divider-waterline.webp");
+    --divider-base-camp: url("assets/backgrounds/generated-divider-base-camp.webp");
+    --divider-analysis-dock: url("assets/backgrounds/generated-divider-analysis-dock.webp");
+    --divider-workshop-dock: url("assets/backgrounds/generated-divider-workshop-dock.webp");
+    --divider-lantern-route: url("assets/backgrounds/generated-divider-lantern-route.webp");
+    --divider-supply-depot: url("assets/backgrounds/generated-divider-supply-depot.webp");
+    --divider-final-checkpoint: url("assets/backgrounds/generated-divider-final-checkpoint.webp");
 }
 
 * {
@@ -267,7 +274,7 @@ li {
 .location-band {
     position: relative;
     overflow: hidden;
-    padding: clamp(4.5rem, 8vw, 7rem) 0;
+    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(6rem, 9vw, 8rem);
 }
 
 .location-band > .page-wrap {
@@ -305,16 +312,93 @@ li {
     right: 0;
     bottom: 0;
     z-index: 1;
-    height: 72px;
+    height: clamp(112px, 12vw, 176px);
     pointer-events: none;
-    background:
-        linear-gradient(180deg, transparent, rgba(3, 8, 6, 0.7)),
-        url("assets/tiles/swamp-tile.svg");
-    background-repeat: repeat-x;
-    background-position: left bottom;
-    background-size: auto 72px;
-    opacity: 0.62;
+    overflow: hidden;
+    --divider-image: var(--divider-waterline);
+    --divider-position: center bottom;
+    --divider-opacity: 0.9;
+    --divider-brightness: 0.88;
+    --divider-accent: rgba(239, 191, 79, 0.16);
     image-rendering: pixelated;
+}
+
+.scene-divider::before,
+.scene-divider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.scene-divider::before {
+    background-image: var(--divider-image);
+    background-position: var(--divider-position);
+    background-size: cover;
+    filter: saturate(0.94) contrast(1.05) brightness(var(--divider-brightness));
+    opacity: var(--divider-opacity);
+    image-rendering: pixelated;
+}
+
+.scene-divider::after {
+    border-top: 1px solid rgba(239, 191, 79, 0.12);
+    background:
+        linear-gradient(180deg, rgba(3, 8, 6, 0) 0%, rgba(3, 8, 6, 0.18) 25%, rgba(3, 8, 6, 0.8) 100%),
+        linear-gradient(90deg, transparent 0%, var(--divider-accent) 32%, transparent 68%),
+        repeating-linear-gradient(90deg, rgba(239, 191, 79, 0.06) 0 2px, transparent 2px 20px);
+    box-shadow:
+        inset 0 18px 28px rgba(3, 8, 6, 0.68),
+        inset 0 -32px 30px rgba(3, 8, 6, 0.86);
+    mix-blend-mode: normal;
+}
+
+.scene-divider--waterline {
+    --divider-image: var(--divider-waterline);
+    --divider-opacity: 0.86;
+    --divider-brightness: 0.86;
+    --divider-accent: rgba(13, 68, 80, 0.26);
+}
+
+.scene-divider--moss-bank {
+    --divider-image: var(--divider-base-camp);
+    --divider-opacity: 0.9;
+    --divider-brightness: 0.9;
+    --divider-accent: rgba(102, 128, 69, 0.26);
+}
+
+.scene-divider--dock-edge {
+    --divider-image: var(--divider-analysis-dock);
+    --divider-opacity: 0.88;
+    --divider-brightness: 0.88;
+    --divider-accent: rgba(65, 105, 216, 0.18);
+}
+
+.scene-divider--workshop {
+    --divider-image: var(--divider-workshop-dock);
+    --divider-opacity: 0.9;
+    --divider-brightness: 0.9;
+    --divider-accent: rgba(250, 70, 22, 0.2);
+}
+
+.scene-divider--lantern {
+    --divider-image: var(--divider-lantern-route);
+    --divider-opacity: 0.9;
+    --divider-brightness: 0.9;
+    --divider-accent: rgba(239, 191, 79, 0.22);
+}
+
+.scene-divider--supply {
+    --divider-image: var(--divider-supply-depot);
+    --divider-opacity: 0.88;
+    --divider-brightness: 0.9;
+    --divider-accent: rgba(102, 128, 69, 0.24);
+}
+
+.scene-divider--final {
+    --divider-image: var(--divider-final-checkpoint);
+    --divider-opacity: 0.94;
+    --divider-brightness: 0.92;
+    --divider-accent: rgba(250, 70, 22, 0.22);
+    height: clamp(132px, 14vw, 196px);
 }
 
 .location-band--hero {
@@ -455,13 +539,14 @@ h1 {
     content: "";
     position: absolute;
     inset: auto 0 0;
-    height: 95px;
+    height: 118px;
     background:
-        linear-gradient(180deg, transparent, rgba(3, 8, 6, 0.82)),
-        url("assets/tiles/swamp-tile.svg");
-    background-repeat: repeat-x;
-    background-size: auto 88px;
-    opacity: 0.62;
+        linear-gradient(180deg, transparent, rgba(3, 8, 6, 0.86)),
+        var(--divider-waterline);
+    background-position: center bottom;
+    background-size: cover;
+    filter: saturate(0.92) brightness(0.84);
+    opacity: 0.78;
     image-rendering: pixelated;
 }
 
@@ -683,7 +768,7 @@ h1 {
 
 .map-first {
     padding-top: clamp(2.2rem, 4vw, 3.8rem);
-    padding-bottom: clamp(4rem, 6vw, 5.8rem);
+    padding-bottom: clamp(6rem, 9vw, 8rem);
 }
 
 .map-first .section-header {
@@ -716,53 +801,101 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.95) contrast(1.04);
+    filter: saturate(0.97) contrast(1.03);
 }
 
 .map-location {
     position: absolute;
     z-index: 2;
     display: grid;
-    gap: 0.18rem;
-    width: clamp(132px, 15.5vw, 196px);
+    gap: 0.08rem;
+    width: clamp(128px, 14vw, 184px);
     min-height: 0;
-    padding: 0.58rem 0.72rem;
-    background: rgba(10, 26, 18, 0.86);
-    border: 2px solid rgba(154, 181, 91, 0.88);
-    box-shadow: 4px 4px 0 rgba(3, 8, 6, 0.82);
+    padding: 0.42rem 0.6rem 0.46rem;
+    background:
+        linear-gradient(180deg, rgba(17, 34, 25, 0.76), rgba(5, 18, 14, 0.88)),
+        repeating-linear-gradient(90deg, rgba(239, 191, 79, 0.06) 0 2px, transparent 2px 7px);
+    border: 1px solid rgba(190, 148, 75, 0.86);
+    outline: 1px solid rgba(102, 128, 69, 0.58);
+    outline-offset: -4px;
+    box-shadow:
+        inset 0 0 0 1px rgba(3, 8, 6, 0.74),
+        inset 0 -12px 0 rgba(3, 8, 6, 0.16),
+        2px 2px 0 rgba(3, 8, 6, 0.64);
+    clip-path: polygon(0 8px, 8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
     color: var(--text);
     text-decoration: none;
-    transition: transform 150ms ease, border-color 150ms ease, background 150ms ease;
+    text-shadow: 2px 2px 0 rgba(3, 8, 6, 0.86);
+    transition: transform 150ms ease, border-color 150ms ease, filter 150ms ease, background 150ms ease;
+}
+
+.map-location::before,
+.map-location::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.map-location::before {
+    inset: 6px;
+    border-top: 1px solid rgba(239, 191, 79, 0.24);
+    border-bottom: 1px solid rgba(3, 8, 6, 0.7);
+}
+
+.map-location::after {
+    top: 0.45rem;
+    right: 0.55rem;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    box-shadow:
+        -0.95rem 0 0 rgba(239, 191, 79, 0.72),
+        0 0 10px rgba(239, 191, 79, 0.24);
+    opacity: 0.82;
+}
+
+.map-location > * {
+    position: relative;
+    z-index: 1;
 }
 
 .map-location:hover,
 .map-location.is-active {
-    transform: translate(2px, 2px);
-    border-color: var(--orange);
-    background: rgba(23, 44, 32, 0.96);
+    transform: translate(1px, 1px);
+    border-color: rgba(250, 70, 22, 0.92);
+    background:
+        linear-gradient(180deg, rgba(34, 61, 38, 0.78), rgba(12, 34, 23, 0.88)),
+        repeating-linear-gradient(90deg, rgba(239, 191, 79, 0.08) 0 2px, transparent 2px 7px);
+    filter: brightness(1.08);
 }
 
 .map-location__index,
 .map-location span:last-child {
     color: var(--gold);
     font-family: var(--pixel-font);
-    font-size: 0.54rem;
-    line-height: 1.55;
+    font-size: clamp(0.42rem, 0.56vw, 0.52rem);
+    line-height: 1.45;
     text-transform: uppercase;
+}
+
+.map-location__index {
+    color: var(--orange-2);
 }
 
 .map-location strong {
     color: var(--text);
-    line-height: 1.15;
+    font-size: clamp(0.78rem, 1.05vw, 0.96rem);
+    line-height: 1.08;
 }
 
-.map-location--home { left: 7%; top: 8%; }
-.map-location--profile { left: 32%; top: 7%; }
-.map-location--research { right: 23%; top: 7%; }
-.map-location--projects { left: 39%; top: 42%; }
-.map-location--trail { left: 8%; bottom: 23%; }
-.map-location--inventory { right: 5%; top: 28%; }
-.map-location--contact { right: 17%; bottom: 22%; }
+.map-location--home { left: 6.5%; top: 10.9%; }
+.map-location--profile { left: 27.6%; top: 13.1%; }
+.map-location--research { right: 8.2%; top: 13.2%; }
+.map-location--projects { left: 42.4%; top: 34.6%; }
+.map-location--trail { left: 7.3%; top: 60.6%; }
+.map-location--inventory { right: 5.7%; top: 45.9%; }
+.map-location--contact { right: 19.6%; top: 69.3%; }
 
 .quest-grid {
     display: grid;
@@ -1048,11 +1181,19 @@ h1 {
     }
 
     .location-band {
-        padding: 4rem 0;
+        padding: 4rem 0 5.75rem;
     }
 
     .location-scene {
         opacity: 0.24;
+    }
+
+    .scene-divider {
+        height: 98px;
+    }
+
+    .scene-divider--final {
+        height: 116px;
     }
 
     .location-band--hero {
