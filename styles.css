@@ -1029,24 +1029,61 @@ h1 {
 
 .inventory-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
 }
 
 .skill-item {
-    min-height: 275px;
+    display: flex;
+    min-height: 290px;
+    flex-direction: column;
     background: linear-gradient(180deg, rgba(23, 44, 32, 0.96), rgba(16, 32, 23, 0.98));
+}
+
+.skill-item__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .skill-icon {
     width: 64px;
     height: 64px;
-    margin-bottom: 1rem;
     filter: drop-shadow(4px 4px 0 var(--shadow));
 }
 
+.skill-item__index {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--gold);
+    font-family: var(--pixel-font);
+    font-size: 0.5rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
 .skill-item h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+.skill-item p {
+    margin: 1.2rem 0 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: auto;
+}
+
+.skill-tags li {
+    padding: 0.42rem 0.58rem;
+    background: rgba(13, 68, 80, 0.28);
+    border: 1px solid rgba(65, 105, 216, 0.62);
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 800;
 }
 
 .contact-panel {
@@ -1069,7 +1106,7 @@ h1 {
     font-style: normal;
 }
 
-.contact-list li {
+.contact-link {
     display: flex;
     align-items: center;
     gap: 0.85rem;
@@ -1079,6 +1116,31 @@ h1 {
     border: 2px solid rgba(102, 128, 69, 0.58);
     color: var(--text);
     font-weight: 800;
+    text-decoration: none;
+    transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+}
+
+.contact-link:hover {
+    border-color: var(--gold);
+    background: rgba(13, 68, 80, 0.42);
+    transform: translate(1px, 1px);
+}
+
+.contact-link span {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.contact-link small {
+    color: var(--gold);
+    font-family: var(--pixel-font);
+    font-size: 0.48rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.contact-link strong {
+    overflow-wrap: anywhere;
 }
 
 .site-footer {
@@ -1115,8 +1177,7 @@ h1 {
         min-height: auto;
     }
 
-    .quest-grid,
-    .inventory-grid {
+    .quest-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1337,7 +1398,8 @@ h1 {
     }
 
     .keyword-grid li,
-    .tech-list li {
+    .tech-list li,
+    .skill-tags li {
         width: 100%;
     }
 }
