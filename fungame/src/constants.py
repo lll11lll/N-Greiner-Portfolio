@@ -1,0 +1,53 @@
+from __future__ import annotations
+
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+FPS = 60
+
+ARENA_WIDTH = 3600
+ARENA_HEIGHT = 2600
+TILE_SIZE = 32
+
+MAX_ENEMIES = 170
+MAX_PLAYER_PROJECTILES = 360
+MAX_ENEMY_PROJECTILES = 220
+MAX_PARTICLES = 520
+MAX_DAMAGE_NUMBERS = 90
+MAX_PICKUPS = 260
+MAX_MINES = 80
+
+PLAYER_RADIUS = 15
+PLAYER_MAX_HEALTH = 100
+
+CAMERA_LERP = 8.5
+
+COLOR_BG = (9, 11, 18)
+COLOR_PANEL = (17, 21, 33)
+COLOR_PANEL_DARK = (7, 9, 15)
+COLOR_LINE = (56, 69, 88)
+COLOR_TEXT = (229, 244, 255)
+COLOR_MUTED = (134, 154, 178)
+COLOR_CYAN = (55, 235, 255)
+COLOR_BLUE = (58, 129, 255)
+COLOR_MAGENTA = (255, 63, 191)
+COLOR_AMBER = (255, 189, 69)
+COLOR_GREEN = (109, 255, 128)
+COLOR_RED = (255, 82, 82)
+COLOR_PURPLE = (159, 91, 255)
+
+PALETTE = {
+    "void": COLOR_BG,
+    "floor": (18, 22, 30),
+    "floor_alt": (23, 28, 38),
+    "metal": (42, 48, 59),
+    "metal_hi": (92, 101, 119),
+    "outline": (3, 4, 9),
+    "cyan": COLOR_CYAN,
+    "blue": COLOR_BLUE,
+    "magenta": COLOR_MAGENTA,
+    "amber": COLOR_AMBER,
+    "green": COLOR_GREEN,
+    "red": COLOR_RED,
+    "purple": COLOR_PURPLE,
+    "white": COLOR_TEXT,
+}
