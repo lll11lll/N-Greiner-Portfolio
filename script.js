@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const navList = document.querySelector("#primaryNav");
     const navLinks = Array.from(document.querySelectorAll(".nav-link"));
     const mapLinks = Array.from(document.querySelectorAll(".map-location"));
-    const sectionLinks = [...navLinks, ...mapLinks];
+    const samePageHashLinks = (links) => links.filter((link) => {
+        const href = link.getAttribute("href") || "";
+        return href.startsWith("#") && href.length > 1;
+    });
+    const sectionLinks = [...samePageHashLinks(navLinks), ...samePageHashLinks(mapLinks)];
     const sections = Array.from(new Set(sectionLinks
         .map((link) => document.querySelector(link.getAttribute("href")))
         .filter(Boolean)));

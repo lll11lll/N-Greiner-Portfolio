@@ -205,6 +205,10 @@ li {
     color: var(--text);
 }
 
+.nav-link--game {
+    color: var(--gold);
+}
+
 .nav-toggle.pixel-button {
     display: none;
 }
@@ -269,6 +273,41 @@ li {
 
 .pixel-raster {
     image-rendering: pixelated;
+}
+
+.game-page main {
+    min-height: calc(100vh - var(--header-height) - 3px);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.game-stage {
+    width: min(100%, 1280px, calc((100vh - var(--header-height) - 3px - 3rem) * 16 / 9));
+    aspect-ratio: 16 / 9;
+    background: var(--bg-deep);
+    border: 3px solid var(--border);
+    box-shadow: 8px 8px 0 var(--shadow);
+}
+
+.game-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: var(--bg-deep);
+}
+
+.game-placeholder-body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.game-placeholder {
+    max-width: 720px;
 }
 
 .location-band {

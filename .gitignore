@@ -1,0 +1,43 @@
+# Local agent/workspace metadata
+.agents/
+.codex/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+
+# Python caches and test/tool output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# Local game/runtime state
+fungame/save.json
+save.json
+
+# Pygbag cache and non-deploy build internals
+fungame/build/web-cache/
+
+# Source-art and planning artifacts not required by the website deploy
+fungame/.agents/
+fungame/assets/prompts/
+fungame/docs/
+fungame/ORIGINAL_REQUEST.md
+
+# Temporary local server/output files
+*.tmp
+*.temp
+
+
+GAME_INTEGRATION_REPORT.md

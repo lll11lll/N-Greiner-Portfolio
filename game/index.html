@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Scrapstorm Overdrive from the Nicholas Greiner portfolio.">
+    <title>Play Game | Nicholas Greiner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="../Pictures/Logos/NG.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css?v=game-route-1">
+    <script src="../script.js?v=game-route-1" defer></script>
+</head>
+<body class="game-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-site-header>
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand-mark" href="../index.html#home" aria-label="Nicholas Greiner home">
+                <span class="brand-glyph" aria-hidden="true">NG</span>
+                <span class="brand-text">Nicholas Greiner</span>
+            </a>
+
+            <button class="nav-toggle pixel-button pixel-button--compact" type="button" aria-expanded="false" aria-controls="primaryNav">
+                <img class="pixel-icon" src="../assets/icons/menu.svg" alt="menu-icon" aria-hidden="true">
+                <span>Menu</span>
+            </button>
+
+            <ul class="nav-list" id="primaryNav">
+                <li><a class="nav-link" href="../index.html#map">Map</a></li>
+                <li><a class="nav-link" href="../index.html#profile">Profile</a></li>
+                <li><a class="nav-link" href="../index.html#research">Research</a></li>
+                <li><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                <li><a class="nav-link" href="../index.html#trail">Experience</a></li>
+                <li><a class="nav-link" href="../index.html#inventory">Inventory</a></li>
+                <li><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                <li><a class="nav-link nav-link--game is-active" href="./" aria-current="page">Play Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" aria-label="Scrapstorm Overdrive game area">
+        <div class="game-stage">
+            <iframe class="game-frame" src="build/index.html" title="Scrapstorm Overdrive"></iframe>
+        </div>
+    </main>
+</body>
+</html>
