@@ -421,6 +421,13 @@ class Game:
             self.update(dt)
             self.draw()
             pygame.display.flip()
+            if self.frame_count == 0:
+                import platform
+
+                if hasattr(platform, "window"):
+                    platform.window.eval(
+                        'window.parent.postMessage("scrapstorm:ready", window.location.origin);'
+                    )
             await asyncio.sleep(0)
 
             self.frame_count += 1

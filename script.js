@@ -46,6 +46,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    const gameStage = document.querySelector("[data-game-stage]");
+
+    if (gameStage) {
+        const gameFrame = gameStage.querySelector(".game-frame");
+        const gameStatus = gameStage.querySelector("[data-game-status]");
+        const gameRetry = gameStage.querySelector("[data-game-retry]");
+        let startupTimer = null;
+
+        const setGameState = (state, statusText) => {
+            gameStage.dataset.gameState = state;
+            if (gameStatus && statusText) {
+                gameStatus.textContent = statusText;
+            }
+        };
+
+        const clearStartupTimer = () => {
+            if (startupTimer !== null) {
+                window.clearTimeout(startupTimer);
+                startupTimer = null;
+            }
+        };
+
+        const showGameError = (message) => {
+            clearStartupTimer();
+            setGameState("error", message);
+        };
+
+        const armStartupTimer = () => {
+            clearStartupTimer();
+            startupTimer = window.setTimeout(() => {
+                showGameError("Scrapstorm took too long to start. Retry the boot sequence or return to the portfolio.");
+            }, 30000);
+        };
+
+        if (gameFrame) {
+            window.addEventListener("message", (event) => {
+                const isTrustedReadyMessage = event.origin === window.location.origin
+                    && event.source === gameFrame.contentWindow
+                    && event.data === "scrapstorm:ready";
+
+                if (!isTrustedReadyMessage) return;
+                clearStartupTimer();
+                setGameState("ready", "Scrapstorm Overdrive is ready.");
+            });
+
+            gameFrame.addEventListener("error", () => {
+                showGameError("Scrapstorm could not load. Retry the boot sequence or return to the portfolio.");
+            });
+
+            if (gameRetry) {
+                gameRetry.addEventListener("click", () => {
+                    setGameState("loading", "Preparing Scrapstorm Overdrive...");
+                    armStartupTimer();
+                    gameFrame.src = gameFrame.src;
+                });
+            }
+
+            armStartupTimer();
+        } else {
+            showGameError("Scrapstorm could not load. Return to the portfolio and try again.");
+        }
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", (event) => {
             const hash = anchor.getAttribute("href");

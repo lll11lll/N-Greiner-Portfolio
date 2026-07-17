@@ -38,6 +38,6 @@ fungame/ORIGINAL_REQUEST.md
 # Temporary local server/output files
 *.tmp
 *.temp
-
+/plans
 
 GAME_INTEGRATION_REPORT.md

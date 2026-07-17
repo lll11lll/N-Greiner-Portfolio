@@ -23,6 +23,11 @@
     --body-font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --wrap: min(1180px, calc(100% - 40px));
     --header-height: 82px;
+    --motion-press: 120ms;
+    --motion-fast: 150ms;
+    --motion-enter: 220ms;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
     --divider-waterline: url("assets/backgrounds/generated-divider-waterline.webp");
     --divider-base-camp: url("assets/backgrounds/generated-divider-base-camp.webp");
     --divider-analysis-dock: url("assets/backgrounds/generated-divider-analysis-dock.webp");
@@ -229,12 +234,12 @@ li {
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+    transition: transform var(--motion-press) var(--ease-out), opacity var(--motion-press) var(--ease-out);
 }
 
-.pixel-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 3px 3px 0 var(--shadow);
+.pixel-button:not(.pixel-button--disabled):active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--shadow);
 }
 
 .pixel-button--blue {
@@ -260,9 +265,11 @@ li {
     opacity: 0.78;
 }
 
-.pixel-button--disabled:hover {
-    transform: none;
-    box-shadow: 5px 5px 0 var(--shadow);
+@media (hover: hover) and (pointer: fine) {
+    .pixel-button:not(.pixel-button--disabled):hover {
+        transform: translate(2px, 2px);
+        box-shadow: 3px 3px 0 var(--shadow);
+    }
 }
 
 .pixel-icon {
@@ -283,6 +290,8 @@ li {
 }
 
 .game-stage {
+    position: relative;
+    overflow: hidden;
     width: min(100%, 1280px, calc((100vh - var(--header-height) - 3px - 3rem) * 16 / 9));
     aspect-ratio: 16 / 9;
     background: var(--bg-deep);
@@ -296,6 +305,86 @@ li {
     height: 100%;
     border: 0;
     background: var(--bg-deep);
+    opacity: 0.6;
+    transition: opacity var(--motion-enter) var(--ease-out);
+}
+
+.game-loader {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: clamp(1rem, 4vw, 3rem);
+    background:
+        linear-gradient(135deg, rgba(250, 70, 22, 0.1), transparent 38%),
+        rgba(3, 8, 6, 0.9);
+    opacity: 1;
+    transition: opacity var(--motion-enter) var(--ease-out);
+}
+
+.game-loader__panel {
+    width: min(100%, 620px);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    background: rgba(16, 32, 23, 0.97);
+    border: 3px solid var(--border);
+    box-shadow: 7px 7px 0 var(--shadow);
+}
+
+.game-loader__status {
+    margin-bottom: 1.25rem;
+    color: var(--text);
+    font-weight: 800;
+}
+
+.game-loader__progress {
+    height: 14px;
+    overflow: hidden;
+    background: var(--bg-deep);
+    border: 2px solid var(--border);
+}
+
+.game-loader__bar {
+    display: block;
+    width: 42%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--orange), var(--gold));
+    transform: translateX(-110%);
+    animation: game-loader-progress 1200ms linear infinite;
+}
+
+.game-loader__actions {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.4rem;
+}
+
+[data-game-state="ready"] .game-frame {
+    opacity: 1;
+}
+
+[data-game-state="ready"] .game-loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-game-state="ready"] .game-loader__bar,
+[data-game-state="error"] .game-loader__bar {
+    animation-play-state: paused;
+}
+
+[data-game-state="error"] .game-loader__progress {
+    display: none;
+}
+
+[data-game-state="error"] .game-loader__actions {
+    display: flex;
+}
+
+@keyframes game-loader-progress {
+    to {
+        transform: translateX(240%);
+    }
 }
 
 .game-placeholder-body {
@@ -1156,13 +1245,19 @@ h1 {
     color: var(--text);
     font-weight: 800;
     text-decoration: none;
-    transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+    transition: transform var(--motion-press) var(--ease-out), opacity var(--motion-press) var(--ease-out);
 }
 
-.contact-link:hover {
-    border-color: var(--gold);
-    background: rgba(13, 68, 80, 0.42);
-    transform: translate(1px, 1px);
+.contact-link:active {
+    transform: translate(2px, 2px);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .contact-link:hover {
+        border-color: var(--gold);
+        background: rgba(13, 68, 80, 0.42);
+        transform: translate(1px, 1px);
+    }
 }
 
 .contact-link span {
@@ -1259,7 +1354,7 @@ h1 {
         top: calc(100% + 3px);
         left: 0;
         right: 0;
-        display: none;
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -1267,10 +1362,20 @@ h1 {
         background: rgba(5, 16, 11, 0.98);
         border: 3px solid var(--border);
         box-shadow: 7px 7px 0 var(--shadow);
+        opacity: 0;
+        transform: translateY(-6px) scale(0.985);
+        transform-origin: top right;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform var(--motion-fast) var(--ease-out), opacity var(--motion-fast) var(--ease-out), visibility 0s linear var(--motion-fast);
     }
 
     .nav-list.is-open {
-        display: flex;
+        opacity: 1;
+        transform: none;
+        visibility: visible;
+        pointer-events: auto;
+        transition-delay: 0s;
     }
 
     .nav-link {
@@ -1451,5 +1556,32 @@ h1 {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+    }
+
+    .game-frame,
+    .game-loader {
+        transition: opacity 200ms ease !important;
+    }
+
+    .game-loader__bar {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    .nav-list {
+        transform: none !important;
+        transition: opacity 200ms ease, visibility 0s linear 200ms !important;
+    }
+
+    .nav-list.is-open {
+        transform: none !important;
+        transition-delay: 0s !important;
+    }
+
+    .pixel-button:not(.pixel-button--disabled):active,
+    .contact-link:active {
+        transform: none !important;
+        opacity: 0.85;
+        transition: opacity var(--motion-press) var(--ease-out) !important;
     }
 }
